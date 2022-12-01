@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 22:06:06 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/01 22:03:05 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/02 01:34:49 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 
 private:
 	/* data */ 
-	std::string	info[END];
+	std::string	_info[END];
 
 public:
 	Contact();

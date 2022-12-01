@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:13:23 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/01 21:43:48 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/02 01:35:18 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void Contact::clean()
 
 	id = 0;
 	while (id < END)
-		this->info[id++].clear();
+		this->_info[id++].clear();
 }
 
 void Contact::set_contact(int &index)
@@ -33,21 +33,21 @@ void Contact::set_contact(int &index)
 	int	id;
 
 	id = 0;
-	this->info[id++] = std::to_string(index + 1);
+	this->_info[id++] = std::to_string(index + 1);
 	while (id < this->END)
 	{
 		std::cout << this->enum_guide(id) << " : ";
-		std::getline(std::cin, info[id]);
-		if (info[id].empty())
+		std::getline(std::cin, _info[id]);
+		if (_info[id].empty())
 			std::cout << this->enum_guide(id) << " is empty" << std::endl;
-		else if (info[id].compare("EXIT") == 0)
+		else if (_info[id].compare("EXIT") == 0)
 		{
 			this->clean();
 			return ;
 		}
 		else if (id == this->PHONENUMBER)
 		{
-			if (this->regex_phone(info[id]))
+			if (this->regex_phone(_info[id]))
 				id++;
 			else
 				std::cout << this->enum_guide(id) << " ex) 010-1234-5678" << std::endl;
@@ -93,7 +93,7 @@ void Contact::set_view()
 	while (id < this->END)
 	{
 		std::cout << std::left << std::setw(15) << enum_guide(id);
-		std::cout << "| " << this->info[id] << std::endl;
+		std::cout << "| " << this->_info[id] << std::endl;
 		id++;
 	}
 	std::cout << "========== ---- ==========" << std::endl;
@@ -101,8 +101,8 @@ void Contact::set_view()
 
 void Contact::search_view(int id)
 {
-	if (info[id].length() > 10)
-		std::cout << this->info[id].substr(0, 9) << ".";
+	if (_info[id].length() > 10)
+		std::cout << this->_info[id].substr(0, 9) << ".";
 	else
-		std::cout << std::right << std::setw(10) << this->info[id];
+		std::cout << std::right << std::setw(10) << this->_info[id];
 }

@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 18:48:07 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/01 21:17:34 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/02 01:33:11 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class PhoneBook
 {
 private:
 	/* data */ 
-	int			index;
-	Contact		contact[8];
+	int			_index;
+	Contact		_contact[8];
 
 public:
 	PhoneBook();

@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:49:53 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/01 21:28:45 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/02 01:34:40 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 #include <regex>
 
-PhoneBook::PhoneBook() {this->index = 0;}
+PhoneBook::PhoneBook() {this->_index = 0;}
 
 PhoneBook::~PhoneBook() {}
 
-int &PhoneBook::get_index() { return (this->index); }
+int &PhoneBook::get_index() { return (this->_index); }
 
 void	PhoneBook::contact_add()
 {
-	contact[this->index].set_contact(this->index);
+	_contact[this->_index].set_contact(this->_index);
 }
 
 void	PhoneBook::search_viewlist()
@@ -33,16 +33,16 @@ void	PhoneBook::search_viewlist()
 	std::cout << "╔══════════════════════════════════════════════════╗" << std::endl;
 	std::cout << "║   index   | first name | last name  |  nickname  ║" << std::endl;
 	std::cout << "╠══════════════════════════════════════════════════╣" << std::endl;
-	while (index < this->index)
+	while (index < this->_index)
 	{
 		std::cout << "║";
-		this->contact[index].search_view(contact->INDEX);
+		this->_contact[index].search_view(_contact->INDEX);
 		std::cout << " | ";
-		this->contact[index].search_view(contact->FIRSTNAME);
+		this->_contact[index].search_view(_contact->FIRSTNAME);
 		std::cout << " | ";
-		this->contact[index].search_view(contact->LASTNAME);
+		this->_contact[index].search_view(_contact->LASTNAME);
 		std::cout << " | ";
-		this->contact[index].search_view(contact->NICKNAME);
+		this->_contact[index].search_view(_contact->NICKNAME);
 		std::cout << " ║" << std::endl;
 		index++;
 	}
@@ -72,9 +72,9 @@ void	PhoneBook::search_info()
 		if (this->regex_num(cmd))
 		{
 			cmd_num = atoi(cmd.c_str());
-			if (0 < cmd_num && cmd_num <= this->index)
+			if (0 < cmd_num && cmd_num <= this->_index)
 			{
-				this->contact[cmd_num - 1].set_view();
+				this->_contact[cmd_num - 1].set_view();
 				return ;
 			}
 			else
