@@ -63,6 +63,11 @@
 		"iomanip": "cpp",
 		"deque": "cpp",
 		"regex": "cpp",
-		"functional": "cpp"
+		"functional": "cpp",
+		"fstream": "cpp",
+		"stack": "cpp",
+		"filesystem": "cpp",
+		"iterator": "cpp",
+		"rtst": "c"
 	}
 }
