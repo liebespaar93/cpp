@@ -6,7 +6,7 @@
 /*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 08:03:15 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/06 02:36:57 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/06 20:53:24 by intra42          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ScavTrap::ScavTrap(ScavTrap& ref):
 	this->_hit_point = ref._hit_point;
 	this->_energy_points = ref._energy_points;
 	this->_attack_damage = ref._attack_damage;
-	std::cout << "[ScavTrap] " << std::setw(10) << this->_name << "ScavTrap created!! " << std::endl;
+	std::cout << "[ScavTrap] " << std::setw(10) << this->_name << "ScavTrap copy!! " << std::endl;
 }
 
 ScavTrap::~ScavTrap()

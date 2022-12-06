@@ -6,7 +6,7 @@
 /*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 00:49:14 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/06 02:53:12 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/06 20:53:01 by intra42          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap& ref):
 	this->_hit_point = ref._hit_point;
 	this->_energy_points = ref._energy_points;
 	this->_attack_damage = ref._attack_damage;
-	std::cout << "[DiamondTrap] "  << std::setw(10) << this->_name << "DiamondTrap created!!" << std::endl;
+	std::cout << "[DiamondTrap] "  << std::setw(10) << this->_name << "DiamondTrap copy!!" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()

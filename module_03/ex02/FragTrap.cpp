@@ -6,7 +6,7 @@
 /*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 09:14:56 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/06 02:36:36 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/06 20:52:36 by intra42          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ FragTrap::FragTrap(FragTrap& ref):
 	this->_hit_point = ref._hit_point;
 	this->_energy_points = ref._energy_points;
 	this->_attack_damage = ref._attack_damage;
-	std::cout << "[FragTrap] " << std::setw(10) << this->_name << "FragTrap created!! " << std::endl;
+	std::cout << "[FragTrap] " << std::setw(10) << this->_name << "FragTrap copy!! " << std::endl;
 }
 
 FragTrap::~FragTrap()

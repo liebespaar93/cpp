@@ -6,7 +6,7 @@
 /*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 06:51:03 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/06 01:50:55 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/06 20:51:55 by intra42          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap(const ClapTrap& ref):
 	_energy_points(ref._energy_points),
 	_attack_damage(ref._attack_damage) 
 {
-	std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "ClapTrap created!!" << std::endl;
+	std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "ClapTrap copy!!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
