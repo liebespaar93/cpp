@@ -6,7 +6,7 @@
 /*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 08:00:40 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/06 02:09:00 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/06 15:42:38 by intra42          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	ScavTrap();
 	ScavTrap(std::string name);
 	ScavTrap(ScavTrap& ref);
-	~ScavTrap();
+	virtual ~ScavTrap();
 
 	ScavTrap&   operator=(ScavTrap& ref);
 	void	attack(const std::string& target);
