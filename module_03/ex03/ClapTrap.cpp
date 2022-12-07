@@ -6,7 +6,7 @@
 /*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 06:51:03 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/06 20:52:55 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/07 21:01:22 by intra42          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap():
 	_energy_points(10),
 	_attack_damage(0) 
 {
-	std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "ClapTrap created!!" << std::endl;
+	std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "ClapTrap created!!" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name):
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(std::string name):
 	_energy_points(10),
 	_attack_damage(0) 
 {
-	std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "ClapTrap created!!" << std::endl;
+	std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "ClapTrap created!!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& ref):
@@ -38,12 +38,12 @@ ClapTrap::ClapTrap(const ClapTrap& ref):
 	_energy_points(ref._energy_points),
 	_attack_damage(ref._attack_damage) 
 {
-	std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "ClapTrap copy!!" << std::endl;
+	std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "ClapTrap copy!!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "[ClapTrap] "  << std::setw(10) <<this->_name << "ClapTrap destroy!!" << std::endl;
+	std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) <<this->_name << "ClapTrap destroy!!" << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& ref)
@@ -53,16 +53,16 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& ref)
 	this->_energy_points = ref._energy_points;
 	this->_attack_damage = ref._attack_damage;
 
-	std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "operator = " << ref._name << std::endl;
+	std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "operator = " << ref._name << std::endl;
 	return (*this);
 }
 
 void	ClapTrap::attack(const std::string& target)
 {
 	if (!this->_energy_points)
-		std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "not enough energy!! (Attack Cancel)" << std::endl;
+		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "not enough energy!! (Attack Cancel)" << std::endl;
 	else
-		std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "Attack !! " << target << " hit " << this->_attack_damage << " damage"<< std::endl;
+		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "Attack !! " << target << " hit " << this->_attack_damage << " damage"<< std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -70,22 +70,22 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (this->_energy_points < amount)
 	{
 		this->_energy_points = 0;
-		std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "fucking hurt!! " << amount << " damage !! empty energy" << std::endl;
+		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "fucking hurt!! " << amount << " damage !! empty energy" << std::endl;
 	}
 	else
 	{
 		this->_energy_points -= amount;
-		std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "get " << amount << " damage " << std::endl;
+		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "get " << amount << " damage " << std::endl;
 	}
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!this->_energy_points)
-		std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "not enough energy!! (Repair Cancel)" << std::endl;
+		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "not enough energy!! (Repair Cancel)" << std::endl;
 	else
 	{
 		this->_energy_points += amount;
-		std::cout << "[ClapTrap] "  << std::setw(10) << this->_name << "ahaahang~! Kimochi~ " << amount << " repaired" <<std::endl;
+		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "ahaahang~! Kimochi~ " << amount << " repaired" <<std::endl;
 	}
 }

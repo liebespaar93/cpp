@@ -6,7 +6,7 @@
 /*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 00:49:14 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/06 20:53:01 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/07 21:01:59 by intra42          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ DiamondTrap::DiamondTrap():
 	this->_hit_point = FragTrap::_hit_point;
 	this->_energy_points = ScavTrap::_energy_points;
 	this->_attack_damage = FragTrap::_attack_damage;
-	std::cout << "[DiamondTrap] "  << std::setw(10) << this->_name << "DiamondTrap created!!" << std::endl;
+	std::cout << std::setw(15) << "[DiamondTrap] " << std::setw(10) << this->_name << "DiamondTrap created!!" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name):
@@ -40,7 +40,7 @@ DiamondTrap::DiamondTrap(std::string name):
 	this->_hit_point = FragTrap::_hit_point;
 	this->_energy_points = ScavTrap::_energy_points;
 	this->_attack_damage = FragTrap::_attack_damage;
-	std::cout << "[DiamondTrap] "  << std::setw(10) << this->_name << "DiamondTrap created!!" << std::endl;
+	std::cout << std::setw(15) << "[DiamondTrap] " << std::setw(10) << this->_name << "DiamondTrap created!!" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& ref):
@@ -53,12 +53,12 @@ DiamondTrap::DiamondTrap(const DiamondTrap& ref):
 	this->_hit_point = ref._hit_point;
 	this->_energy_points = ref._energy_points;
 	this->_attack_damage = ref._attack_damage;
-	std::cout << "[DiamondTrap] "  << std::setw(10) << this->_name << "DiamondTrap copy!!" << std::endl;
+	std::cout << std::setw(15) << "[DiamondTrap] " << std::setw(10) << this->_name << "DiamondTrap copy!!" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "[DiamondTrap] "  << std::setw(10) <<this->_name << "DiamondTrap destroy!!" << std::endl;
+	std::cout << std::setw(15) << "[DiamondTrap] " << std::setw(10) <<this->_name << "DiamondTrap destroy!!" << std::endl;
 }
 
 DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& ref)
@@ -69,11 +69,11 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& ref)
 	this->_energy_points = ref._energy_points;
 	this->_attack_damage = ref._attack_damage;
 
-	std::cout << "[DiamondTrap] "  << std::setw(10) << this->_name << "operator = " << ref._name << std::endl;
+	std::cout << std::setw(15) << "[DiamondTrap] " << std::setw(10) << this->_name << "operator = " << ref._name << std::endl;
 	return (*this);
 }
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "[DiamondTrap] "  << std::setw(10) << this->_name << " : I am your father" << std::endl;
+	std::cout << std::setw(15) << "[DiamondTrap] " << std::setw(10) << this->_name << " : I am your father" << std::endl;
 }

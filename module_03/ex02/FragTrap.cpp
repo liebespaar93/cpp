@@ -6,7 +6,7 @@
 /*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 09:14:56 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/06 20:52:36 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/07 20:59:24 by intra42          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ FragTrap::FragTrap():
 	this->_hit_point = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
-	std::cout << "[FragTrap] " << std::setw(10) << this->_name << "FragTrap created!! " << std::endl;
+	std::cout << std::setw(15) << "[FragTrap] " << std::setw(10) << this->_name << "FragTrap created!! " << std::endl;
 }
 
 FragTrap::FragTrap(std::string name):
@@ -31,7 +31,7 @@ FragTrap::FragTrap(std::string name):
 	this->_hit_point = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
-	std::cout << "[FragTrap] " << std::setw(10) << this->_name << "FragTrap created!! " << std::endl;
+	std::cout << std::setw(15) << "[FragTrap] " << std::setw(10) << this->_name << "FragTrap created!! " << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap& ref):
@@ -41,12 +41,12 @@ FragTrap::FragTrap(FragTrap& ref):
 	this->_hit_point = ref._hit_point;
 	this->_energy_points = ref._energy_points;
 	this->_attack_damage = ref._attack_damage;
-	std::cout << "[FragTrap] " << std::setw(10) << this->_name << "FragTrap copy!! " << std::endl;
+	std::cout << std::setw(15) << "[FragTrap] " << std::setw(10) << this->_name << "FragTrap copy!! " << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "[FragTrap] " << std::setw(10) << this->_name << "FragTrap destory!! " << std::endl;
+	std::cout << std::setw(15) << "[FragTrap] " << std::setw(10) << this->_name << "FragTrap destory!! " << std::endl;
 }
 
 FragTrap&	FragTrap::operator=(FragTrap& ref)
@@ -55,7 +55,7 @@ FragTrap&	FragTrap::operator=(FragTrap& ref)
 	this->_hit_point = ref._hit_point;
 	this->_energy_points = ref._energy_points;
 	this->_attack_damage = ref._attack_damage;
-	std::cout << "[FragTrap] " << std::setw(10) << this->_name << "operator = " << ref._name << std::endl;
+	std::cout << std::setw(15) << "[FragTrap] " << std::setw(10) << this->_name << "operator = " << ref._name << std::endl;
 	return (*this);
 }
 
@@ -63,7 +63,7 @@ void	FragTrap::highFivesGuys(void)
 {
 
 	if (!this->_hit_point)
-		std::cout << "[FragTrap] " << std::setw(10) << this->_name << "not enough energy!! (highFivesGuys Cancel)" << std::endl;
+		std::cout << std::setw(15) << "[FragTrap] " << std::setw(10) << this->_name << "not enough energy!! (highFivesGuys Cancel)" << std::endl;
 	else
-		std::cout << "[FragTrap] " << std::setw(10) << this->_name << "hight fives!!" << std::endl;
+		std::cout << std::setw(15) << "[FragTrap] " << std::setw(10) << this->_name << "hight fives!!" << std::endl;
 }
