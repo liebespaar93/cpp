@@ -6,19 +6,21 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 06:19:49 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/13 06:23:09 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/13 06:41:19 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_TPP
-# define ARRAY_TPP
+#define ARRAY_TPP
 
-# ifndef ARRAY_HPP
-# error __FILE__ should only be included from Array.hpp.
-# endif
+#include <system_error>
 
-# include <iostream>
-# include <exception>
+#ifndef ARRAY_HPP
+#error __FILE__ should only be included from Array.hpp.
+#endif
+
+#include <iostream>
+#include <exception>
 
 template <typename T>
 Array<T>::Array():
