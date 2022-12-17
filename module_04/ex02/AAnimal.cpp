@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:49:31 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/08 02:28:25 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/18 06:38:37 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-
 #include <iostream>
 #include <iomanip>
+
+#include "AAnimal.hpp"
 
 AAnimal::AAnimal():
 	_type("Default")

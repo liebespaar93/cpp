@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 19:38:28 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/08 19:46:06 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/18 06:55:50 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <iostream>
 
 #include "AMateria.hpp"
 #include "MateriaSource.hpp"
 #include "Character.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-
-#include <iostream>
 
 int main()
 {

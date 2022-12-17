@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 15:49:37 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/18 06:39:59 by kyoulee          ###   ########.fr       */
+/*   Created: 2022/12/06 15:49:40 by intra42           #+#    #+#             */
+/*   Updated: 2022/12/18 07:02:59 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include "AAnimal.hpp"
-# include "Brain.hpp"
+# include "Animal.hpp"
 
-class Cat: public AAnimal
+class Dog: public Animal
 {
 private:
 	/* data */
-	Brain*	_brain;
 
 public:
-	Cat();
-	Cat(const Cat& ref);
-	~Cat();
+	Dog();
+	Dog(const Dog& ref);
+	~Dog();
 
-	Cat&	operator=(const Cat& ref);
-
-	void	makeSound() const;
+	Dog&	operator=(const Dog& ref);
 	
-	Brain*	get_brain( void ) const;
+	void	makeSound() const;
+
 };
 
 #endif

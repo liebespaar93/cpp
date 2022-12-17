@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:26:28 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/08 02:28:23 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/18 06:38:48 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-
 #include <iostream>
 #include <iomanip>
+
+#include "Brain.hpp"
 
 Brain::Brain()
 {

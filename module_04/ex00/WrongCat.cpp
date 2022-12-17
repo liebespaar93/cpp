@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:49:35 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/08 02:28:21 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/18 06:38:57 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
-
 #include <iostream>
 #include <iomanip>
+
+#include "WrongCat.hpp"
 
 WrongCat::WrongCat():
 	WrongAnimal("cat")

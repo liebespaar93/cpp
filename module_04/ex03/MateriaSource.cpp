@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 19:38:21 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/08 18:44:15 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/18 06:59:17 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ MateriaSource::~MateriaSource()
 
 MateriaSource&	MateriaSource::operator=(const MateriaSource& ref)
 {
+	this->_idx = ref._idx;
 	for(int i = 0; i < _max_skill; i++)
 	{
 		if (this->_skill[i])
@@ -56,7 +57,6 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource& ref)
 	}
 	return (*this);
 }
-
 
 void	MateriaSource::learnMateria(AMateria* ref)
 {

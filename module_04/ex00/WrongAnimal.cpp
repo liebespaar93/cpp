@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:49:31 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/08 02:28:17 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/18 07:05:25 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
-
 #include <iostream>
 #include <iomanip>
+
+#include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal():
 	_type("Default")
