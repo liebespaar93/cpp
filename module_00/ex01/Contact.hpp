@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 22:06:06 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/02 01:34:49 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/17 12:16:48 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,5 @@ public:
 	void		search_view(int id);
 	bool		regex_phone(std::string const &str);
 };
-
 
 #endif
