@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 05:02:50 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/02 11:31:59 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/17 14:12:25 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <HumanA.hpp>
+#include <iostream>
+
+#include "HumanA.hpp"
 
 HumanA::~HumanA() {}
 

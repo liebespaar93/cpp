@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 04:04:19 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/02 04:06:30 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/17 13:52:29 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include "Zombie.hpp"
 
 Zombie* newZombie(std::string name);
 

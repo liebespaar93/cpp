@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 05:21:28 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/02 11:42:10 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/17 14:13:26 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Weapon.hpp>
-#include <iostream>
+#include "Weapon.hpp"
 
 Weapon::Weapon() {
 	this->_type.clear();

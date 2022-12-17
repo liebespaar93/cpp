@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 00:44:50 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/02 04:46:59 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/17 13:52:21 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include "Zombie.hpp"
 #include <ctime>
 
 Zombie*	newZombie(std::string name);

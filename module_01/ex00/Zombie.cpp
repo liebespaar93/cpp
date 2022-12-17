@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 00:40:02 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/02 04:12:00 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/17 13:57:25 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include "Zombie.hpp"
 #include <string>
 
 Zombie::Zombie()
@@ -36,7 +36,7 @@ std::string	Zombie::set_name(std::string name)
 
 std::string	Zombie::rand_alphabet(int option)
 {
-	char *ch;
+	char ch[2];
 
 	std::string alphabet;
 	
@@ -48,7 +48,8 @@ std::string	Zombie::rand_alphabet(int option)
 		alphabet = "aeiou";
 	else
 		alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	ch = (char [2]){alphabet[rand() % alphabet.length()], '\0'};
+	ch[0] = alphabet[rand() % alphabet.length()];
+	ch[1] = '\0';
 	return (ch);
 }
 

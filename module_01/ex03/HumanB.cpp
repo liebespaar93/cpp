@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 05:02:52 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/02 11:41:41 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/17 14:12:46 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <HumanB.hpp>
 
-#include <string>
+#include <iostream>
+
+#include "HumanB.hpp"
 
 HumanB::~HumanB() {}
 

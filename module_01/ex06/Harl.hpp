@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 18:07:27 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/02 20:49:28 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/17 15:02:06 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HARL_CPP
 # define HARL_CPP
 
-# include <iostream>
+# include <string>
 
 class Harl
 {
