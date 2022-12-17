@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 09:14:56 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/07 20:59:24 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/17 21:09:17 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-
+#include <iostream>
 #include <iomanip>
+
+#include "FragTrap.hpp"
 
 FragTrap::FragTrap():
 	ClapTrap()

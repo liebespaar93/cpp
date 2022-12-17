@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 00:49:14 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/07 21:01:59 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/17 21:11:11 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <iostream>
+#include <iomanip>
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
-
-#include <iomanip>
 
 DiamondTrap::DiamondTrap():
 	ClapTrap("Default_clap_name"),

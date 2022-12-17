@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 06:51:05 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/06 01:45:56 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/17 20:51:48 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-
 #include <iomanip>
+#include <iostream>
+
+#include "ClapTrap.hpp"
 
 int main(int argc, char const *argv[])
 {

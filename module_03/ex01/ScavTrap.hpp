@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 08:00:40 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/06 01:42:05 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/17 20:56:47 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-# include "ClapTrap.hpp"
+# include <string>
 
-# include <iostream>
+# include "ClapTrap.hpp"
 
 class ScavTrap: public ClapTrap
 {
@@ -29,8 +29,8 @@ public:
 	~ScavTrap();
 
 	ScavTrap&   operator=(ScavTrap& ref);
-	void	attack(const std::string& target);
-	void	guardGate();
+	void		attack(const std::string& target);
+	void		guardGate();
 };
 
 #endif

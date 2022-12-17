@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 06:51:03 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/07 20:56:19 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/17 20:53:45 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-
+#include <iostream>
 #include <iomanip>
+
+#include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap():
 	_name("Default"),

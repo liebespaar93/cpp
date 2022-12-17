@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 08:03:15 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/07 21:00:28 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/17 20:58:52 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-
+#include <iostream>
 #include <iomanip>
+
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap():
 	ClapTrap()

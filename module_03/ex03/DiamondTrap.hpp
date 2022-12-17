@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 00:49:12 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/06 02:14:06 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/17 21:11:19 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
-#include <iostream>
+#include <string>
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"

@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: intra42 <intra42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 06:51:05 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/06 02:05:38 by intra42          ###   ########.fr       */
+/*   Updated: 2022/12/17 20:55:16 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <iomanip>
+
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-
-#include <iomanip>
 
 int main() {
     std::cout << std::setfill(' ') << std::left;
