@@ -6,11 +6,11 @@
 #    By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 08:26:16 by kyoulee           #+#    #+#              #
-#    Updated: 2022/12/12 12:17:01 by kyoulee          ###   ########.fr        #
+#    Updated: 2022/12/18 10:05:00 by kyoulee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = convert
 
 CC = clang++
 
@@ -24,8 +24,6 @@ CXXFLAGS =
 
 SRC =	main.cpp	\
 		Convert.cpp
-
-
 
 OBJS = $(SRC:.cpp=.o)
 

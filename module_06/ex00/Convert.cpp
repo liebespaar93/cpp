@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 21:27:08 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/12 21:27:08 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 10:10:48 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iomanip>
 #include <string>
 #include <sstream>
+
 #include "Convert.hpp"
 
 Convert::Convert():
@@ -58,7 +59,7 @@ const std::string Convert::to_char()
 	std::string	result;
 
 	num = atof(_str.c_str());
-	if (ft_isfinite(num) || ft_isnan(num))
+	if (ft_isfinite(num) || ft_isnan(num) || (num - static_cast<int>(num)))
 		return ("impossible");
 	
 	if (_str.length() == 1 && std::isprint(_str[0]) && !std::isdigit(_str[0]))
@@ -137,5 +138,4 @@ void	Convert::convert(const std::string str)
 	std::cout <<  "int: " << to_int() << std::endl;
 	std::cout <<  "float: " << to_float() << std::endl;
 	std::cout <<  "double: " << to_double() << std::endl;
-	std::cout <<  std::endl;
 }

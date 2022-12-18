@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 21:30:22 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/12 22:55:24 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 11:41:51 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,5 @@ int	main(void)
 	delete (p);
 	delete (p1);
 	delete (p2);
-	delete (p3);
 	return (0);
 }
