@@ -6,17 +6,18 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:47:06 by dpoveda-          #+#    #+#             */
-/*   Updated: 2022/12/12 08:05:58 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 09:14:42 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <iostream>
+#include <iomanip>
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include <iostream>
-#include <iomanip>
 
 int	main(void)
 {

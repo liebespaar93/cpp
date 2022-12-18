@@ -6,15 +6,15 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:47:06 by dpoveda-          #+#    #+#             */
-/*   Updated: 2022/12/09 06:32:24 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 09:05:32 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
-
 #include <iostream>
 #include <iomanip>
+
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
@@ -99,7 +99,6 @@ int main()
 
 	std::cout << std::endl;
 
-	// Bureaucrat::signForm()
 	std::cout << *budgets;
 	std::cout << std::endl;
 	try {
@@ -118,7 +117,6 @@ int main()
 
 	std::cout << std::endl;
 
-	// Form::beSigned()
 	try {
 		budgets->beSigned(*poor);
 	} catch (std::exception& e) {

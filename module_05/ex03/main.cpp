@@ -6,9 +6,12 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:47:06 by dpoveda-          #+#    #+#             */
-/*   Updated: 2022/12/12 07:39:05 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 09:45:05 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <iostream>
+#include <iomanip>
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
@@ -16,9 +19,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
-
-#include <iostream>
-#include <iomanip>
 
 int	main(void)
 {
@@ -31,6 +31,9 @@ int	main(void)
 	std::cout << "----------------------------" << std::endl;
 
 	Intern	intern;
+	Intern	intern2(intern);
+	Intern	intern3;
+	intern3 = intern;
 	AForm	*robo_form;
 	AForm	*shrub_form;
 	AForm	*president_form;

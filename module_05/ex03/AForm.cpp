@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:44:34 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/12 07:27:09 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 09:36:22 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 AForm::AForm():
 	_name("Default"),
-	_grade_to_sign(AForm::_max_grade),
-	_grade_to_execute(AForm::_max_grade),
+	_grade_to_sign(150),
+	_grade_to_execute(150),
 	_signed(0)
 {
 	std::cout 
@@ -69,6 +69,7 @@ AForm::~AForm()
 
 AForm&	AForm::operator=(const AForm& ref)
 {
+	const_cast<std::string&>(this->_name) = ref._name;
 	const_cast<int&>(this->_grade_to_sign) = ref._grade_to_sign;
 	const_cast<int&>(this->_grade_to_execute) = ref._grade_to_execute;
 	this->_signed = ref._signed;

@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:44:40 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/12 08:06:44 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 08:54:58 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 Form::Form():
 	_name("Default"),
-	_grade_to_sign(Form::_max_grade),
-	_grade_to_execute(Form::_max_grade),
+	_grade_to_sign(150),
+	_grade_to_execute(150),
 	_signed(0)
 {
 	std::cout << std::setw(15) << "[Form] " << "create!!" << std::endl;
@@ -49,6 +49,7 @@ Form::~Form()
 
 Form&	Form::operator=(const Form& ref)
 {
+	const_cast<std::string&>(this->_name) = ref._name;
 	const_cast<int&>(this->_grade_to_sign) = ref._grade_to_sign;
 	const_cast<int&>(this->_grade_to_execute) = ref._grade_to_execute;
 	this->_signed = ref._signed;

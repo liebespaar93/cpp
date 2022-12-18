@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 20:38:27 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/12 03:51:00 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 09:07:49 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ private:
 	/* data */
 	const std::string	_name;
 	int					_grade;
-	static const int	_max_grade = 150;
-	static const int	_min_grade = 1;
+	int					_max_grade;
+	int					_min_grade;
 
 public:
 	Bureaucrat();
@@ -43,8 +43,6 @@ public:
 	void	increment();
 	void	decrement();
 	
-	bool	signForm(const AForm& ref);
-	
 	class GradeTooLowException : public std::exception
 	{
 		public:
@@ -56,7 +54,7 @@ public:
 		public:
 			virtual const char* what() const throw();
 	};
-
+	
 	/* ============= ex01 ============= */
 	void	signForm(AForm& ref);
 

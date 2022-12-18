@@ -6,16 +6,16 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 22:58:19 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/11 19:06:42 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 08:52:32 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
-# include "Bureaucrat.hpp"
-
 # include <exception>
+
+# include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
@@ -23,8 +23,6 @@ class Form
 {
 private:
 	/* data */
-	static const int	_max_grade = 150;
-	static const int	_min_grade = 1;
 	const std::string	_name;
 	const int			_grade_to_sign;
 	const int			_grade_to_execute;

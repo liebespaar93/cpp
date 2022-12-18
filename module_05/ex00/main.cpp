@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:47:06 by dpoveda-          #+#    #+#             */
-/*   Updated: 2022/12/08 22:44:22 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 08:17:07 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main() {
 		jim->increment();
 		std::cout << "4: " << *jim << std::endl;
 		jim->increment();
-		std::cout << "4: " << *jim << std::endl;
+		std::cout << "5: " << *jim << std::endl;
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -71,7 +71,7 @@ int main() {
 		luffy->decrement();
 		std::cout << "7: " << *luffy << std::endl;
 		luffy->decrement();
-		std::cout << "7: " << *luffy << std::endl;
+		std::cout << "8: " << *luffy << std::endl;
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -80,7 +80,7 @@ int main() {
 	std::cout << std::endl;
 
 	try {
-		Bureaucrat yuno("Yuno", 151);
+		Bureaucrat yuno("Yundo", 151);
 		std::cout << "HELLO WORLD!!!" << std::endl;
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
@@ -89,7 +89,7 @@ int main() {
 	std::cout << std::endl;
 
 	try {
-		Bureaucrat yuno("Yuno", -1);
+		Bureaucrat yuno("Yundo", -1);
 		std::cout << "HELLO WORLD!!!" << std::endl;
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;

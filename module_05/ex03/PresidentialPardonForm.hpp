@@ -6,15 +6,16 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 02:48:15 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/12 03:19:36 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 09:38:37 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 
-# include "AForm.hpp"
 # include <string>
+
+# include "AForm.hpp"
 
 class PresidentialPardonForm: public AForm
 {
