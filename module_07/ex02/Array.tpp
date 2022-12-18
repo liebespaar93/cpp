@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 06:19:49 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/13 06:44:09 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 12:22:40 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ Array<T>::Array(std::size_t size):
 
 template <typename T>
 Array<T>::Array(const Array& ref):
-	_head(NULL)
+	_head(new T[ref.size()]),
+	_size(ref.size())
 {
 	*this = ref;
 }
@@ -57,7 +58,7 @@ Array<T>&	Array<T>::operator=(const Array<T>& ref)
 template <typename T>
 T&	Array<T>::operator[](std::size_t index)
 {
-	if (0 <= index && index < _size)
+	if (0 <= index && index < this->size())
 		return (this->_head[index]);
 	else
 		throw Array::SegmentFault();

@@ -6,7 +6,7 @@
 #    By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 08:26:16 by kyoulee           #+#    #+#              #
-#    Updated: 2022/12/12 23:21:16 by kyoulee          ###   ########.fr        #
+#    Updated: 2022/12/18 11:50:40 by kyoulee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = a.out
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98  -Wshadow
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 IFLAGS = -I ./
 

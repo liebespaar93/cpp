@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 02:13:35 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/13 06:19:34 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 11:57:55 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Array
 {
 private:
 	/* data */
-	T* _head;
-	std::size_t _size;
+	T*			_head;
+	std::size_t	_size;
 
 public:
 	Array();
