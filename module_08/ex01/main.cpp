@@ -6,15 +6,14 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 01:48:55 by dpoveda-          #+#    #+#             */
-/*   Updated: 2022/12/16 06:31:30 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/18 13:06:54 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "Span.hpp"
 
 #include <iostream>
 #include <exception>
 
+#include "Span.hpp"
 
 #ifndef PLAY
 int main()

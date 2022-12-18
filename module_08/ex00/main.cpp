@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/18 13:04:01 by kyoulee           #+#    #+#             */
+/*   Updated: 2022/12/18 13:05:59 by kyoulee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <iostream>
 #include <vector>
@@ -28,7 +39,7 @@ int main(void)
 	}
 	try
 	{
-		std::cout << *(easyfind(d, 0)) << " is at " << std::distance(d.begin(), easyfind(d, 5)) << std::endl;
+		std::cout << *(easyfind(d, 0)) << " is at " << std::distance(d.begin(), easyfind(d, 0)) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -36,7 +47,7 @@ int main(void)
 	}
 	try
 	{
-		std::cout << *(easyfind(l, 10)) << " is at " << std::distance(l.begin(), easyfind(l, 5)) << std::endl;
+		std::cout << *(easyfind(l, 10)) << " is at " << std::distance(l.begin(), easyfind(l, 10)) << std::endl;
 	}
 	catch(const std::exception& e)
 	{

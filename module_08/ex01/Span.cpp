@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <iterator>
 #include <vector>
+
 #include "Span.hpp"
 
 Span::Span()
