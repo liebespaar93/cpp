@@ -6,7 +6,7 @@
 #    By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 08:26:16 by kyoulee           #+#    #+#              #
-#    Updated: 2022/12/21 12:05:47 by kyoulee          ###   ########.fr        #
+#    Updated: 2022/12/21 12:07:59 by kyoulee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = convert
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98  -Wshadow
+CFLAGS = -Wall -Wextra -Werror -std=c++98  
 
 IFLAGS = -I ./
 
