@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+         #
+#    By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/02 11:46:30 by kyoulee           #+#    #+#              #
-#    Updated: 2022/12/17 14:30:46 by kyoulee          ###   ########.fr        #
+#    Updated: 2022/12/21 12:05:47 by kyoulee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = file_replace
 
 TEST_TXT = test.txt
 
-CC = clang++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

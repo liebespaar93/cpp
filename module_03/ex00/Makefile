@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+         #
+#    By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 06:50:37 by kyoulee           #+#    #+#              #
-#    Updated: 2022/12/17 20:51:53 by kyoulee          ###   ########.fr        #
+#    Updated: 2022/12/21 12:05:47 by kyoulee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ClapTrap
 
-CC = clang++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

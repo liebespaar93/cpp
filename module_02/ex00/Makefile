@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+         #
+#    By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/02 21:55:01 by kyoulee           #+#    #+#              #
-#    Updated: 2022/12/17 15:03:43 by kyoulee          ###   ########.fr        #
+#    Updated: 2022/12/21 12:05:47 by kyoulee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
-CC = clang++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

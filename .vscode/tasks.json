@@ -2,8 +2,8 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: clang++ 활성 파일 빌드",
-            "command": "/usr/bin/clang++",
+            "label": "C/C++: c++ 활성 파일 빌드",
+            "command": "/usr/bin/c++",
             "args": [
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
