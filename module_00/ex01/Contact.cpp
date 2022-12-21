@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:13:23 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/17 12:19:17 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/21 11:18:49 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ void Contact::set_contact(int &index)
 	{
 		std::cout << this->enum_guide(id) << " : ";
 		std::getline(std::cin, _info[id]);
+		if (std::cin.eof())
+		{
+			this->clean();
+			return ;
+		}
 		if (_info[id].empty())
 			std::cout << this->enum_guide(id) << " is empty" << std::endl;
 		else if (_info[id].compare("EXIT") == 0)

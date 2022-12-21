@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:49:53 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/17 12:17:34 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/21 11:32:35 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int &PhoneBook::get_index() { return (this->_index); }
 
 void	PhoneBook::contact_add()
 {
-	_contact[this->_index].set_contact(this->_index);
+	_contact[this->_index % 8].set_contact(this->_index);
+		
 }
 
 void	PhoneBook::search_viewlist()
@@ -33,7 +34,7 @@ void	PhoneBook::search_viewlist()
 	std::cout << "╔══════════════════════════════════════════════════╗" << std::endl;
 	std::cout << "║   index   | first name | last name  |  nickname  ║" << std::endl;
 	std::cout << "╠══════════════════════════════════════════════════╣" << std::endl;
-	while (index < this->_index)
+	while (index < this->_index && index < 8)
 	{
 		std::cout << "║";
 		this->_contact[index].search_view(_contact->INDEX);
@@ -72,7 +73,7 @@ void	PhoneBook::search_info()
 		if (this->regex_num(cmd))
 		{
 			cmd_num = atoi(cmd.c_str());
-			if (0 < cmd_num && cmd_num <= this->_index)
+			if (0 < cmd_num && this->_index - 8 < cmd_num && cmd_num <= this->_index)
 			{
 				this->_contact[cmd_num - 1].set_view();
 				return ;
