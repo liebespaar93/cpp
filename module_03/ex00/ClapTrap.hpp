@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 06:51:01 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/17 20:50:59 by kyoulee          ###   ########.fr       */
+/*   Updated: 2023/01/21 10:55:32 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-protected:
+private:
 	/* data */
 	std::string		_name;
 	unsigned int	_hit_point;
@@ -28,11 +28,11 @@ public:
 	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap& ref);
-	virtual ~ClapTrap();
+	~ClapTrap();
 
 	ClapTrap& operator=(const ClapTrap& ref);
 
-	virtual void	attack(const std::string& target);
+	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 };

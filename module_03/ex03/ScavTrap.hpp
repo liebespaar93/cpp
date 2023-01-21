@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 08:00:40 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/17 21:14:16 by kyoulee          ###   ########.fr       */
+/*   Updated: 2023/01/21 14:45:30 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ public:
 	virtual ~ScavTrap();
 
 	ScavTrap&   operator=(ScavTrap& ref);
-	void	attack(const std::string& target);
-	void	guardGate();
+	void		attack(const std::string& target);
+	void		guardGate();
 };
 
 #endif

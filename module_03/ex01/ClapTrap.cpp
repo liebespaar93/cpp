@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 06:51:03 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/17 20:53:45 by kyoulee          ###   ########.fr       */
+/*   Updated: 2023/01/21 14:06:57 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,15 @@ ClapTrap::~ClapTrap()
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& ref)
 {
+	std::string	old_name;
+
+	old_name = this->_name;
 	this->_name = ref._name;
 	this->_hit_point = ref._hit_point;
 	this->_energy_points = ref._energy_points;
 	this->_attack_damage = ref._attack_damage;
 
-	std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "operator = " << ref._name << std::endl;
+	std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << old_name << "operator = " << ref._name << std::endl;
 	return (*this);
 }
 
@@ -62,31 +65,48 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (!this->_energy_points)
 		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "not enough energy!! (Attack Cancel)" << std::endl;
-	else
+	else if (!this->_hit_point)
+		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "dead!! (Attack Cancel)" << std::endl;
+	else 
+	{
+		this->_energy_points--;
 		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "Attack !! " << target << " hit " << this->_attack_damage << " damage"<< std::endl;
+	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->_energy_points < amount)
-	{
-		this->_energy_points = 0;
-		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "fucking hurt!! " << amount << " damage !! empty energy" << std::endl;
-	}
+	if (!this->_energy_points)
+		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "not enough energy!! (takeDamage Cancel)" << std::endl;
+	else if (!this->_hit_point)
+		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "dead!! (takeDamage Cancel)" << std::endl;
 	else
 	{
-		this->_energy_points -= amount;
-		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "get " << amount << " damage " << std::endl;
+		this->_energy_points--;
+
+		if (this->_hit_point > amount)
+		{
+			this->_hit_point -= amount;
+			std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "get " << amount << " damage " << std::endl;
+		}
+		else
+		{
+			this->_hit_point = 0;
+			std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "get " << amount << " damage  [dead!!]" << std::endl;
+		}
 	}
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!this->_energy_points)
-		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "not enough energy!! (Repair Cancel)" << std::endl;
+		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "not enough energy!! (beRepaired Cancel)" << std::endl;
+	else if (!this->_hit_point)
+		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "dead!! (beRepaired Cancel)" << std::endl;
 	else
 	{
-		this->_energy_points += amount;
+		this->_energy_points--;
+		this->_hit_point += amount;
 		std::cout << std::setw(15) << "[ClapTrap] "  << std::setw(10) << this->_name << "ahaahang~! Kimochi~ " << amount << " repaired" <<std::endl;
 	}
 }

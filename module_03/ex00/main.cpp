@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 06:51:05 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/17 20:51:48 by kyoulee          ###   ########.fr       */
+/*   Updated: 2023/01/21 14:04:04 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,32 @@ int main(int argc, char const *argv[])
 
     std::cout << std::setfill(' ') << std::left;
     
-	ClapTrap *c1 = new ClapTrap("alpha");
-	ClapTrap *c2 = new ClapTrap("Zoro");
+	ClapTrap *c1 = new ClapTrap("A");
+	ClapTrap *c2 = new ClapTrap("B");
 	ClapTrap *c3 = new ClapTrap(*c1);
-	ClapTrap *c4 = new ClapTrap();
+	ClapTrap *c4 = new ClapTrap("E");
+	ClapTrap oper;
+
+	oper.attack("");
+	oper = *c1;
+	oper.attack("");
 
 	std::cout << std::endl;
 
-	c1->attack("Slime");
-	c2->attack("Sanji");
-	c3->attack("Slime shiny");
-    c4->attack("");
+	for (int i = 1; i <= 12 ;  i++)
+	{
+		std::cout << "[" << std::setw(2) << i << "]";
+		c4->attack("");
+	}
+	c4->takeDamage(5);
+	c4->beRepaired(5);
+	
+	
+	std::cout << std::endl;
+
+	c1->attack("F");
+	c2->attack("G");
+	c3->attack("H");
 	std::cout << std::endl;
 
 	c1->takeDamage(80);

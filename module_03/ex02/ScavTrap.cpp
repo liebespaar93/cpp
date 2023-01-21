@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 08:03:15 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/17 20:58:52 by kyoulee          ###   ########.fr       */
+/*   Updated: 2023/01/21 14:08:22 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 ScavTrap::ScavTrap():
 	ClapTrap()
 {
-	this->_name = "Default";
 	this->_hit_point = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
@@ -28,7 +27,6 @@ ScavTrap::ScavTrap():
 ScavTrap::ScavTrap(std::string name):
 	ClapTrap(name)
 {
-	this->_name = name;
 	this->_hit_point = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
@@ -38,7 +36,6 @@ ScavTrap::ScavTrap(std::string name):
 ScavTrap::ScavTrap(ScavTrap& ref):
 	ClapTrap(ref._name)
 {
-	this->_name = ref._name;
 	this->_hit_point = ref._hit_point;
 	this->_energy_points = ref._energy_points;
 	this->_attack_damage = ref._attack_damage;
@@ -52,25 +49,39 @@ ScavTrap::~ScavTrap()
 
 ScavTrap&	ScavTrap::operator=(ScavTrap& ref)
 {
+	std::string	old_name;
+
+	old_name = this->_name;
 	this->_name = ref._name;
 	this->_hit_point = ref._hit_point;
 	this->_energy_points = ref._energy_points;
 	this->_attack_damage = ref._attack_damage;
-	std::cout << std::setw(15) << "[ScavTrap] " << std::setw(10) << this->_name << "operator = " << ref._name << std::endl;
+	std::cout << std::setw(15) << "[ScavTrap] " << std::setw(10) << old_name << "operator = " << ref._name << std::endl;
 	return (*this);
 }
 
 void	ScavTrap::attack(const std::string& target)
 {
 	if (!this->_energy_points)
-		std::cout << std::setw(15) << "[ScavTrap] " << std::setw(10) << this->_name << "not enough energy!! (Attack Cancel)" << std::endl;
+		std::cout << std::setw(15) << "[ScavTrap] "  << std::setw(10) << this->_name << "not enough energy!! (Attack Cancel)" << std::endl;
+	else if (!this->_hit_point)
+		std::cout << std::setw(15) << "[ScavTrap] "  << std::setw(10) << this->_name << "dead!! (Attack Cancel)" << std::endl;
 	else
-		std::cout << std::setw(15) << "[ScavTrap] " << std::setw(10) << this->_name << "Attack !! " << target << " hit " << this->_attack_damage << " damage"<< std::endl;
+	{
+		this->_energy_points--;
+		std::cout << std::setw(15) << "[ScavTrap] "  << std::setw(10) << this->_name << "Attack !! " << target << " hit " << this->_attack_damage << " damage " << std::endl;
+	}
 }
 
-void	ScavTrap::guardGate() {
+void	ScavTrap::guardGate()
+{
 	if (!this->_energy_points)
-		std::cout << std::setw(15) << "[ScavTrap] " << std::setw(10) << this->_name << "not enough energy!! (GuardGate Cancel)" << std::endl;
+		std::cout << std::setw(15) << "[ScavTrap] "  << std::setw(10) << this->_name << "not enough energy!! (guardGate Cancel)" << std::endl;
+	else if (!this->_hit_point)
+		std::cout << std::setw(15) << "[ScavTrap] "  << std::setw(10) << this->_name << "dead!! (guardGate Cancel)" << std::endl;
 	else
-		std::cout << std::setw(15) << "[ScavTrap] " << std::setw(10) << this->_name << "nuneen~ mot gina ganda~~! " << this->_name << " guardGate " << std::endl;
+	{
+		this->_energy_points--;
+		std::cout << std::setw(15) << "[ScavTrap] " << std::setw(10) << this->_name << "mot gina ganda~~! " << this->_name << " guardGate " << std::endl;
+	}
 }
