@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 21:26:53 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/18 09:59:34 by kyoulee          ###   ########.fr       */
+/*   Updated: 2023/01/25 05:07:41 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ Data* deserialize(uintptr_t raw) { return reinterpret_cast<Data*>(raw); }
 
 int	main(void)
 {
-	Data* data;
-	uintptr_t rawData;
-	Data* retData;
+	Data*		data;
+	uintptr_t	rawData;
+	Data*		retData;
 
 	data = new Data;
 

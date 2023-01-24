@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 21:27:08 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/18 10:10:48 by kyoulee          ###   ########.fr       */
+/*   Updated: 2023/01/25 05:05:21 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,19 @@ const std::string Convert::to_char()
 
 const std::string	Convert::to_int()
 {
-	double	num;
+	double				num;
+	std::ostringstream	result;
 
 	num = atof(_str.c_str());
 	if (ft_isfinite(num) || ft_isnan(num))
 		return ("impossible");
 	if (this->_str.length() == 1 && !std::isdigit(_str[0]))
-		return (std::to_string(static_cast<int>(_str[0])));
-	return (std::to_string(atoi(_str.c_str())));
+	{
+		result << static_cast<int>(_str[0]);
+		return (result.str());
+	}
+	result << atoi(_str.c_str());
+	return (result.str());
 }
 
 const std::string	Convert::to_float()
@@ -91,10 +96,13 @@ const std::string	Convert::to_float()
 
 	num = atof(_str.c_str());
 	if (ft_isfinite(num) || ft_isnan(num))
-		return (std::to_string(num));
+	{
+		result << num;
+		return (result.str());
+	}
 	if (this->_str.length() == 1 && !std::isdigit(_str[0]))
 	{
-		result << std::to_string(static_cast<int>(_str[0])) << ".0f";
+		result << static_cast<int>(_str[0]) << ".0f";
 		return (result.str());
 	}
 	result << num;
@@ -114,10 +122,13 @@ const std::string	Convert::to_double()
 
 	num = atof(_str.c_str());
 	if (ft_isfinite(num) || ft_isnan(num))
-		return (std::to_string(num));
+	{
+		result << num;
+		return (result.str());
+	}
 	if (this->_str.length() == 1 && !std::isdigit(_str[0]))
 	{
-		result << std::to_string(static_cast<int>(_str[0])) << ".0";
+		result << static_cast<int>(_str[0]) << ".0";
 		return (result.str());
 	}
 	result << num;

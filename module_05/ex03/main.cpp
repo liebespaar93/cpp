@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:47:06 by dpoveda-          #+#    #+#             */
-/*   Updated: 2022/12/18 09:45:05 by kyoulee          ###   ########.fr       */
+/*   Updated: 2023/01/25 03:20:24 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(void)
 	std::cout << "UNKNOWN:" << std::endl;
 	try
 	{
-		unknown_form = intern.makeForm("driving licence", "drive");
+		unknown_form = intern.makeForm("UNKNOWN", "drive");
 		std::cout << std::setw(25) << "[Main]" << " was just created \n" << *unknown_form << std::endl << std::endl;
 	}
 	catch (Intern::Exception &e)

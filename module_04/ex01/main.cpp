@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 18:15:30 by intra42           #+#    #+#             */
-/*   Updated: 2022/12/18 06:39:21 by kyoulee          ###   ########.fr       */
+/*   Updated: 2023/01/25 00:45:01 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,70 +19,85 @@
 
 int main( void )
 {
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+
+	delete j; //should not create a leak 
+	delete i;
+
+	system("leaks a.out");
+	
     std::cout << std::setfill(' ') << std::left;
 	
-	const Animal* dog = new Dog();
-	const Animal* cat = new Cat();
+	Dog*	dog = new Dog();
+	Cat*	cat = new Cat();
+	Dog		oper_dog;
+	Cat		oper_cat;
 
 	std::cout << std::endl;
 
+
+	oper_dog = *dog;
+	oper_cat = *cat;
 	delete dog;
 	delete cat;
+
 	system("leaks a.out");
 	std::cout << std::endl;
 	std::cout << std::endl;
 
+	
 	// Proof of deep copy
-	Dog medor;
-	Cat fifi;
+	Dog dog_2;
+	Cat cat_2;
 
-	fifi.get_brain()->set_ideas("test5", 1);
-	Dog & medor_ref = medor;
-	Cat & fifi_ref = fifi;
+	cat_2.get_brain()->set_ideas("test5", 1);
+	Dog & dog_2_ref = dog_2;
+	Cat & cat_2_ref = cat_2;
 
 	std::cout << std::endl << "creating copies" << std::endl;
-	Dog medor_copy(medor_ref);
-	Cat fifi_copy(fifi_ref);
+	Dog dog_2_copy(dog_2_ref);
+	Cat cat_2_copy(cat_2_ref);
 
-	Dog medor_copy_ref = medor_copy;
-	Cat fifi_copy_ref = fifi_copy;
+	Dog dog_2_copy_ref = dog_2_copy;
+	Cat cat_2_copy_ref = cat_2_copy;
 	std::cout << std::endl << "comparing" << std::endl;
-	std::cout << std::setw(15) << "medor" << "brain's heap address: " << static_cast<void*>(medor.get_brain()) << std::endl;
-	std::cout << std::setw(15) << "medor_ref" << "brain's heap address: " << static_cast<void*>(medor_ref.get_brain()) << std::endl;
-	std::cout << std::setw(15) << "medor_copy" << "brain's heap address: " << static_cast<void*>(medor_copy.get_brain()) << std::endl;
-	std::cout << std::setw(15) << "medor_copy_ref" << "brain's heap address: " << static_cast<void*>(medor_copy_ref.get_brain()) << std::endl;
+	std::cout << std::setw(15) << "dog_2" << "brain's heap address: " << static_cast<void*>(dog_2.get_brain()) << std::endl;
+	std::cout << std::setw(15) << "dog_2_ref" << "brain's heap address: " << static_cast<void*>(dog_2_ref.get_brain()) << std::endl;
+	std::cout << std::setw(15) << "dog_2_copy" << "brain's heap address: " << static_cast<void*>(dog_2_copy.get_brain()) << std::endl;
+	std::cout << std::setw(15) << "dog_2_copy_ref" << "brain's heap address: " << static_cast<void*>(dog_2_copy_ref.get_brain()) << std::endl;
 
-	std::cout << std::setw(15) << "fifi" << "brain's heap address: " << static_cast<void*>(fifi.get_brain()) << std::endl;
-	std::cout << std::setw(15) << "fifi_ref" << "brain's heap address: " << static_cast<void*>(fifi_ref.get_brain()) << std::endl;
-	std::cout << std::setw(15) << "fifi_copy" << "brain's heap address: " << static_cast<void*>(fifi_copy.get_brain()) << std::endl;
-	std::cout << std::setw(15) << "fifi_copy_ref" << "brain's heap address: " << static_cast<void*>(fifi_copy_ref.get_brain()) << std::endl;
+	std::cout << std::setw(15) << "cat_2" << "brain's heap address: " << static_cast<void*>(cat_2.get_brain()) << std::endl;
+	std::cout << std::setw(15) << "cat_2_ref" << "brain's heap address: " << static_cast<void*>(cat_2_ref.get_brain()) << std::endl;
+	std::cout << std::setw(15) << "cat_2_copy" << "brain's heap address: " << static_cast<void*>(cat_2_copy.get_brain()) << std::endl;
+	std::cout << std::setw(15) << "cat_2_copy_ref" << "brain's heap address: " << static_cast<void*>(cat_2_copy_ref.get_brain()) << std::endl;
 
-	medor.get_brain()->set_ideas("test1", 1);
-	medor_ref.get_brain()->set_ideas("test2", 1);
-	medor_copy.get_brain()->set_ideas("test3", 1);
-	medor_copy_ref.get_brain()->set_ideas("test4", 1);
+	dog_2.get_brain()->set_ideas("test1", 1);
+	dog_2_ref.get_brain()->set_ideas("test2", 1);
+	dog_2_copy.get_brain()->set_ideas("test3", 1);
+	dog_2_copy_ref.get_brain()->set_ideas("test4", 1);
 
-	std::cout << std::setw(15) << "medor" << "brain's array[0]: " << medor.get_brain()->get_ideas()[0] << std::endl;
-	std::cout << std::setw(15) << "medor_ref" << "brain's array[0]: " << medor_ref.get_brain()->get_ideas()[0] << std::endl;
-	std::cout << std::setw(15) << "medor_copy" << "brain's array[0]: " << medor_copy.get_brain()->get_ideas()[0] << std::endl;
-	std::cout << std::setw(15) << "medor_copy_ref" << "brain's array[0]: " << medor_copy_ref.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "dog_2" << "brain's array[0]: " << dog_2.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "dog_2_ref" << "brain's array[0]: " << dog_2_ref.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "dog_2_copy" << "brain's array[0]: " << dog_2_copy.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "dog_2_copy_ref" << "brain's array[0]: " << dog_2_copy_ref.get_brain()->get_ideas()[0] << std::endl;
 
 	std::cout << std::endl;
 
-	std::cout << std::setw(15) << "fifi" << "brain's array[0]: " << fifi.get_brain()->get_ideas()[0] << std::endl;
-	std::cout << std::setw(15) << "fifi_ref" << "brain's array[0]: " << fifi_ref.get_brain()->get_ideas()[0] << std::endl;
-	std::cout << std::setw(15) << "fifi_copy" << "brain's array[0]: " << fifi_copy.get_brain()->get_ideas()[0] << std::endl;
-	std::cout << std::setw(15) << "fifi_copy_ref" << "brain's array[0]: " << fifi_copy_ref.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "cat_2" << "brain's array[0]: " << cat_2.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "cat_2_ref" << "brain's array[0]: " << cat_2_ref.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "cat_2_copy" << "brain's array[0]: " << cat_2_copy.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "cat_2_copy_ref" << "brain's array[0]: " << cat_2_copy_ref.get_brain()->get_ideas()[0] << std::endl;
 	
-	fifi_ref.get_brain()->set_ideas("test6", 1);
-	fifi_copy_ref.get_brain()->set_ideas("test7", 1);
+	cat_2_ref.get_brain()->set_ideas("test6", 1);
+	cat_2_copy_ref.get_brain()->set_ideas("test7", 1);
 	
 	std::cout << std::endl;
 
-	std::cout << std::setw(15) << "fifi" << "brain's array[0]: " << fifi.get_brain()->get_ideas()[0] << std::endl;
-	std::cout << std::setw(15) << "fifi_ref" << "brain's array[0]: " << fifi_ref.get_brain()->get_ideas()[0] << std::endl;
-	std::cout << std::setw(15) << "fifi_copy" << "brain's array[0]: " << fifi_copy.get_brain()->get_ideas()[0] << std::endl;
-	std::cout << std::setw(15) << "fifi_copy_ref" << "brain's array[0]: " << fifi_copy_ref.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "cat_2" << "brain's array[0]: " << cat_2.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "cat_2_ref" << "brain's array[0]: " << cat_2_ref.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "cat_2_copy" << "brain's array[0]: " << cat_2_copy.get_brain()->get_ideas()[0] << std::endl;
+	std::cout << std::setw(15) << "cat_2_copy_ref" << "brain's array[0]: " << cat_2_copy_ref.get_brain()->get_ideas()[0] << std::endl;
 	
 	std::cout << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 06:12:53 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/18 09:44:30 by kyoulee          ###   ########.fr       */
+/*   Updated: 2023/01/25 04:45:09 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ AForm	*new_robotomy_request_form(std::string target) { return (new RobotomyReque
 AForm	*Intern::makeForm(std::string name, std::string target)
 {
 	std::string	msg[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	AForm		*(*fct[3])(std::string target) = { new_shrubbery_creation_form, new_robotomy_request_form, new_presidential_pardon_form};
+	AForm		*(*fct[3])(std::string target) = { &new_shrubbery_creation_form, &new_robotomy_request_form, &new_presidential_pardon_form};
 	AForm		*ret = NULL;
-	
+
 	for (int i = 0; i < 3; i++)
 	{
 		if (name == msg[i])
