@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 21:27:08 by kyoulee           #+#    #+#             */
-/*   Updated: 2023/01/25 05:05:21 by kyoulee          ###   ########.fr       */
+/*   Updated: 2023/01/30 13:03:51 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,19 +74,14 @@ const std::string Convert::to_char()
 
 const std::string	Convert::to_int()
 {
-	double				num;
-	std::ostringstream	result;
+	double	num;
 
 	num = atof(_str.c_str());
 	if (ft_isfinite(num) || ft_isnan(num))
 		return ("impossible");
 	if (this->_str.length() == 1 && !std::isdigit(_str[0]))
-	{
-		result << static_cast<int>(_str[0]);
-		return (result.str());
-	}
-	result << atoi(_str.c_str());
-	return (result.str());
+		return (std::to_string(static_cast<int>(_str[0])));
+	return (std::to_string(atoi(_str.c_str())));
 }
 
 const std::string	Convert::to_float()
@@ -97,20 +92,17 @@ const std::string	Convert::to_float()
 	num = atof(_str.c_str());
 	if (ft_isfinite(num) || ft_isnan(num))
 	{
-		result << num;
+		result << std::to_string(num) << "f";
 		return (result.str());
 	}
 	if (this->_str.length() == 1 && !std::isdigit(_str[0]))
 	{
-		result << static_cast<int>(_str[0]) << ".0f";
+		result << std::to_string(static_cast<int>(_str[0])) << ".0f";
 		return (result.str());
 	}
 	result << num;
 	if (!strchr(result.str().c_str(), '.'))
-	{
-		result << ".0f";
-		return (result.str());
-	}
+		result << ".0";
 	result << "f";
 	return (result.str());
 }
@@ -122,21 +114,15 @@ const std::string	Convert::to_double()
 
 	num = atof(_str.c_str());
 	if (ft_isfinite(num) || ft_isnan(num))
-	{
-		result << num;
-		return (result.str());
-	}
+		return (std::to_string(num));
 	if (this->_str.length() == 1 && !std::isdigit(_str[0]))
 	{
-		result << static_cast<int>(_str[0]) << ".0";
+		result << std::to_string(static_cast<int>(_str[0])) << ".0";
 		return (result.str());
 	}
 	result << num;
 	if (!strchr(result.str().c_str(), '.'))
-	{
 		result << ".0";
-		return (result.str());
-	}
 	return (result.str());
 	
 }
