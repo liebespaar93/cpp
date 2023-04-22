@@ -87,62 +87,82 @@ void	PmergeMe::ft_print_sort_data()
 	std::cout << std::endl;
 }
 
-std::vector<int> PmergeMe::ft_sort_bubble()
+void	PmergeMe::ft_insert_sort()
 {
+	int		point;
+
 	this->_sort_data = this->_data;
-	
 	for (size_t i = 0; i < this->_sort_data.size(); i++)
 	{
-		for (size_t j = 0; j < this->_sort_data.size() - i - 1; j++)
+		for (size_t j = 0; j < i; j++)
 		{
-			if (this->_sort_data[j] > this->_sort_data[j + 1])
+			if (this->_sort_data[i] < this->_sort_data[j])
 			{
-				this->_sort_data[j] += this->_sort_data[j + 1];
-				this->_sort_data[j + 1] = this->_sort_data[j] - this->_sort_data[j + 1];
-				this->_sort_data[j] -= this->_sort_data[j + 1];
+				point = this->_sort_data[i];
+				for (size_t k = i; k > j; k--)
+					this->_sort_data[k] = this->_sort_data[k - 1];
+				this->_sort_data[j] = point;
+				j = i;
 			}
 		}
 	}
-	return (this->_sort_data);
 }
 
-int	PmergeMe::partition(std::vector<int> &arr, int l, int r)
+void	PmergeMe::ft_merge_sort(int L, int R)
 {
-	int pivot;
-	int i, tmp;
+	int	mid;
 
-	pivot = this->_sort_data[r];
-	i = 0;
-	for (int j = l; j <= r - 1; j++)
-	{
-		if (this->_sort_data[j] <= pivot)
-		{
-			i++;
-			tmp = this->_sort_data[i];
-			this->_sort_data[i] = this->_sort_data[j];
-			this->_sort_data[j] = tmp;
-		}
-	}
-	tmp = this->_sort_data[i + 1];
-	this->_sort_data[i + 1] = this->_sort_data[r];
-	this->_sort_data[r] = tmp;
-	return (i + 1);
-}
+	if (L >= R)
+		return;
+	mid = (L + R) / 2;
+	this->ft_merge_sort(L, mid);
+	this->ft_merge_sort(mid + 1, R);
 
-void	PmergeMe::quick_sort(std::vector<int> &arr, int L, int R)
-{
-	int	p;
 	
-	if (L < R)
+	std::vector<int> result;
+	for (int i = L, j = mid + 1; i <= mid || j <= R;)
 	{
-		p = this->partition(arr, L, R);
-		quick_sort(arr, L, p - 1);
-		quick_sort(arr, p + 1, R);
+		if (i > mid)
+			result.push_back(this->_sort_data[j++]);
+		else if (j > R || this->_sort_data[i] <= this->_sort_data[j])
+			result.push_back(this->_sort_data[i++]);
+		else
+			result.push_back(this->_sort_data[j++]);
 	}
+	for (int i = L, j = 0; i <= R; i++, j++)
+		this->_sort_data[i] = result[j];
 }
 
-void	PmergeMe::ft_sort_quick()
+void	PmergeMe::ft_merge_sort()
 {
 	this->_sort_data = this->_data;
-	this->quick_sort(this->_sort_data, 0, this->_sort_data.size());
+	this->ft_merge_sort(0, this->_sort_data.size() - 1);
+}
+
+void	PmergeMe::ft_set_time()
+{
+	if (clock_gettime(CLOCK_MONOTONIC, &this->_time) == -1)
+		throw std::exception();
+}
+
+void	PmergeMe::ft_diff_time()
+{
+    struct timespec		diff;
+	long long			us_diff;
+	
+	if (clock_gettime(CLOCK_MONOTONIC, &diff) == -1)
+		throw std::exception();
+	us_diff = diff.tv_nsec - this->_time.tv_nsec;
+	us_diff /= 10000;
+	if (us_diff < 0)
+		us_diff += 100000;
+	std::cout << "Time to process a range of " 
+		<< this->_sort_data.size() 
+		<< " elements with std::[..] : "
+		<< diff.tv_sec - this->_time.tv_sec
+		<< "."
+		<< std::setw(5) << std::setfill('0') << us_diff
+		<< " μs"
+		<< std::setw(0) << std::setfill(' ') 
+		<< std::endl;
 }

@@ -23,9 +23,9 @@ private:
 	/* data */
 	std::vector<int>    _data;
 	std::vector<int>	_sort_data;
+    struct timespec		_time;
 
-	int		partition(std::vector<int> &arr, int l, int r);
-	void	quick_sort(std::vector<int> &arr, int L, int R);
+	void	ft_merge_sort(int L, int R);
 	
 public:
 	PmergeMe();
@@ -35,10 +35,13 @@ public:
 
 	PmergeMe&	operator=(const PmergeMe& ref);
 
-	void				ft_print_data();
-	void				ft_print_sort_data();
-	std::vector<int>	ft_sort_bubble();
-	void				ft_sort_quick();
+	void	ft_print_data();
+	void	ft_print_sort_data();
+	void	ft_insert_sort();
+	void	ft_merge_sort();
+	void	ft_set_time();
+	void	ft_diff_time();
+
 };
 
 #endif
