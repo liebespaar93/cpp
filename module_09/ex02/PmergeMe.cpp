@@ -17,7 +17,6 @@
 
 PmergeMe::PmergeMe()
 {
-	std::cout << std::setw(15) << "[PmergeMe] " << "create!!" << std::endl;
 }
 
 PmergeMe::PmergeMe(std::vector<std::string> argv_str)
@@ -29,15 +28,17 @@ PmergeMe::PmergeMe(std::vector<std::string> argv_str)
 		i++)
 	{
 		std::string::const_iterator it = (*i).begin();
+		if ((*i).empty())
+			throw PmergeMeError("is empty");
 		while (it != (*i).end() && std::isdigit(*it))
 			++it;
 		if (!(*i).empty() && it != (*i).end())
-			throw std::exception();
+			throw PmergeMeError("is not positive integer");
 		try
 		{
 			num = std::stoi((*i).c_str());
 			if (num < 0)
-				throw std::exception();
+				throw PmergeMeError("stoi");
 		}
 		catch ( ... )
 		{
@@ -54,12 +55,13 @@ PmergeMe::PmergeMe(const PmergeMe& ref)
  
 PmergeMe::~PmergeMe()
 {
-	std::cout << std::setw(15) << "[PmergeMe] " << "delete!!" << std::endl;
 }
  
 PmergeMe&	PmergeMe::operator=(const PmergeMe& ref)
 {
 	this->_data = ref._data;
+	this->_sort_data = ref._sort_data;
+	this->_time = ref._time;
 	return (*this);
 }
 
@@ -142,7 +144,7 @@ void	PmergeMe::ft_merge_sort()
 void	PmergeMe::ft_set_time()
 {
 	if (clock_gettime(CLOCK_MONOTONIC, &this->_time) == -1)
-		throw std::exception();
+		throw PmergeMeError("set_time");
 }
 
 void	PmergeMe::ft_diff_time()
@@ -151,7 +153,7 @@ void	PmergeMe::ft_diff_time()
 	long long			us_diff;
 	
 	if (clock_gettime(CLOCK_MONOTONIC, &diff) == -1)
-		throw std::exception();
+		throw PmergeMeError("clock_gettime");
 	us_diff = diff.tv_nsec - this->_time.tv_nsec;
 	us_diff /= 10000;
 	if (us_diff < 0)
@@ -165,4 +167,21 @@ void	PmergeMe::ft_diff_time()
 		<< " μs"
 		<< std::setw(0) << std::setfill(' ') 
 		<< std::endl;
+}
+
+PmergeMe::PmergeMeError::PmergeMeError()
+	: _message("Error")
+{
+
+}
+
+PmergeMe::PmergeMeError::PmergeMeError(std::string errormessege)
+	: _message("Error: " + errormessege)
+{
+
+}
+
+const char* PmergeMe::PmergeMeError::what() const throw()
+{
+	return (this->_message.c_str());
 }

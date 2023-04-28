@@ -42,6 +42,18 @@ public:
 	void	ft_set_time();
 	void	ft_diff_time();
 
+	class PmergeMeError : public std::exception
+	{
+		private:
+			std::string _message;
+
+		public:
+			PmergeMeError();
+			PmergeMeError(std::string errormessege);
+			virtual ~PmergeMeError() throw() {return ;}
+
+			virtual const char* what() const throw();
+	};
 };
 
 #endif
